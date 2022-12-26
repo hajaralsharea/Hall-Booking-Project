@@ -1,0 +1,130 @@
+﻿@model IEnumerable<Hall_Booking.Models.Booking>
+
+@{
+    ViewData["Title"] = "SearchBooking";
+    Layout ="~/Views/Shared/AdminLayout.cshtml";
+}
+<head>
+
+
+
+    <title>Search Booking</title>
+    <style>
+        .btnstyle {
+            color: black;
+            background-color: antiquewhite;
+            border-color: antiquewhite;
+            border-radius: 30px;
+            padding: 10px 24px;
+        }
+        .linkho a:hover{
+          font-weight:bold;
+      }
+     table thead tr th{
+            font-weight:bold !important;
+        }
+
+          .table thead th {
+            border-top: 0;
+            border-bottom-width: 1px;
+            font-family: -webkit-body !important;
+            font-weight: initial;
+            font-size: 17px;
+        }
+         .table tbody td {
+            border-top: 0;
+            border-bottom-width: 1px;
+            font-family: -webkit-body !important;
+            font-weight: initial;
+            font-size: 17px;
+        }
+       
+    </style>
+
+
+
+</head>
+<h1 style="padding: 18px 3px; font-family: -webkit-body;"> <i class="mdi mdi-magnify menu-icon"></i>  Search Booking</h1>
+
+   <div class="row" style="padding-bottom: 34px;">
+       
+           <form action="SearchBooking" method="post">
+               <div >
+               <label for="startDate" style="padding: 10px;font-family: -webkit-body ;">Start date:</label>
+               <input  type="date" class="form-control" name="startDate" placeholder="Start Date" style="width: 238px;" />
+             </div>
+             <div >
+                <label for="endDate" style="padding: 10px;font-family: -webkit-body ;">End Date:</label>
+               <input  type="date" class="form-control" name="endDate" placeholder="End Date" style="width: 238px;"/>
+              </div>
+               <br />
+               <div >
+               <button type="submit" class="btnstyle"style="padding: 7px;display: flex;width: 94px;text-align: center;justify-content: center;"> search</button>
+               </div>
+           </form>
+       </div>
+ 
+<div class="table-responsive">
+<table class="table" id="userbook">
+    <thead>
+        <tr>
+            <th>
+               Client needs
+            </th>
+            <th>
+               Submited Date
+            </th>
+            <th>
+                Check In
+            </th>
+            <th>
+                Check Out
+            </th>
+            <th>
+                @Html.DisplayNameFor(model => model.Hall)
+            </th>
+            <th>
+                @Html.DisplayNameFor(model => model.User)
+            </th>
+            <th>
+                @Html.DisplayNameFor(model => model.Status)
+            </th>
+            <th></th>
+        </tr>
+    </thead>
+    <tbody>
+@foreach (var item in Model) {
+        <tr>
+            <td>
+                @Html.DisplayFor(modelItem => item.BookingNotes)
+            </td>
+            <td>
+                @Html.DisplayFor(modelItem => item.BookingDate)
+            </td>
+            <td>
+                @Html.DisplayFor(modelItem => item.StartDate)
+            </td>
+            <td>
+                @Html.DisplayFor(modelItem => item.EndDate)
+            </td>
+            <td>
+                @Html.DisplayFor(modelItem => item.Hall.Id)
+            </td>
+            <td>
+                @Html.DisplayFor(modelItem => item.User.Id)
+            </td>
+            <td>
+                @Html.DisplayFor(modelItem => item.Status.StatusName)
+            </td>
+            <td class="linkho">
+                <a asp-action="Edit" asp-route-id="@item.Id" style="color: black;background-color: antiquewhite;text-decoration: none;padding: 13px;border-radius: 18px;">Edit</a> |
+                <a asp-action="Delete" asp-route-id="@item.Id" style="color: black;background-color: antiquewhite;text-decoration: none;padding: 13px;border-radius: 18px;">Delete</a>
+            </td>
+        </tr>
+}
+   
+    </tbody>
+
+</table>
+</div>
+

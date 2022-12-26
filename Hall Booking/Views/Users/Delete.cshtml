@@ -1,0 +1,58 @@
+﻿@model Hall_Booking.Models.User
+@{ Layout ="~/Views/Shared/UserLayout.cshtml";}
+@{
+    ViewData["Title"] = "Delete";
+}
+
+<h1 style=" font-family: -webkit-body; font-weight: bold;  font-size: 23px;"> <i class="mdi mdi-delete-circle" style="font-size: 26px;"></i>Delete Account</h1>
+
+<h3 style=" font-family: -webkit-body;  font-size: 20px;">Are you sure you want to delete your account?</h3>
+<div>
+
+
+    <hr />
+    <dl class="row">
+        <dt class = "col-sm-2" style=" font-family: -webkit-body;  font-size: 17px;">
+            @Html.DisplayNameFor(model => model.Fname)
+        </dt>
+        <dd class = "col-sm-10" style=" font-family: -webkit-body;  font-size: 17px;">
+            @Html.DisplayFor(model => model.Fname)
+        </dd>
+        <dt class = "col-sm-2" style=" font-family: -webkit-body;  font-size: 17px;">
+            @Html.DisplayNameFor(model => model.Lname)
+        </dt>
+        <dd class = "col-sm-10" style=" font-family: -webkit-body;  font-size: 17px;">
+            @Html.DisplayFor(model => model.Lname)
+        </dd>
+        <dt class = "col-sm-2" style=" font-family: -webkit-body;  font-size: 17px;">
+            @Html.DisplayNameFor(model => model.UserName)
+        </dt>
+        <dd class = "col-sm-10" style=" font-family: -webkit-body;  font-size: 17px;">
+            @Html.DisplayFor(model => model.UserName)
+        </dd>
+        <dt class = "col-sm-2" style=" font-family: -webkit-body;  font-size: 17px;">
+            @Html.DisplayNameFor(model => model.Email)
+        </dt>
+        <dd class = "col-sm-10" style=" font-family: -webkit-body;  font-size: 17px;">
+            @Html.DisplayFor(model => model.Email)
+        </dd>
+        <dt class = "col-sm-2" style=" font-family: -webkit-body;  font-size: 17px;">
+            @Html.DisplayNameFor(model => model.Phonenumber)
+        </dt>
+        <dd class = "col-sm-10" style=" font-family: -webkit-body;  font-size: 17px;">
+            @Html.DisplayFor(model => model.Phonenumber)
+        </dd>
+        <dt class = "col-sm-2" style=" font-family: -webkit-body;  font-size: 17px;">
+            @Html.DisplayNameFor(model => model.ImagePath)
+        </dt>
+        <dd class = "col-sm-10" style=" font-family: -webkit-body;  font-size: 17px;">
+            @Html.DisplayFor(model => model.ImagePath)
+        </dd>
+    </dl>
+    
+    <form asp-action="Delete">
+        <input type="hidden" asp-for="Id" />
+        <input type="submit" value="Delete" class="btn btn-danger" style="color: black;background-color: red;text-decoration: none;padding: 13px;border-radius: 18px; width: 94px; height: 43px;"  /> 
+
+    </form>
+</div>

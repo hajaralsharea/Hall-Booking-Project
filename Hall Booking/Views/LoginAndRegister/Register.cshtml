@@ -1,0 +1,139 @@
+﻿@model Hall_Booking.Models.User
+
+@{
+    ViewData["Title"] = "Register";
+    Layout = null;
+}
+
+ 
+
+@*<h1>Register</h1>
+
+<h4>User</h4>
+<hr />
+<div class="row">
+    <div class="col-md-4">
+        <form asp-action="Register">
+            <div asp-validation-summary="ModelOnly" class="text-danger"></div>
+            <div class="form-group">
+                <label asp-for="Fname" class="control-label"></label>
+                <input asp-for="Fname" class="form-control" />
+                <span asp-validation-for="Fname" class="text-danger"></span>
+            </div>
+            <div class="form-group">
+                <label asp-for="Lname" class="control-label"></label>
+                <input asp-for="Lname" class="form-control" />
+                <span asp-validation-for="Lname" class="text-danger"></span>
+            </div>
+            <div class="form-group">
+                <label asp-for="Email" class="control-label"></label>
+                <input asp-for="Email" class="form-control" />
+                <span asp-validation-for="Email" class="text-danger"></span>
+            </div>
+            <div class="form-group">
+                <label asp-for="Phonenumber" class="control-label"></label>
+                <input asp-for="Phonenumber" class="form-control" />
+                <span asp-validation-for="Phonenumber" class="text-danger"></span>
+            </div>
+            <div class="form-group">
+                <label asp-for="ImagePath" class="control-label"></label>
+                <input asp-for="ImagePath" class="form-control" />
+                <span asp-validation-for="ImagePath" class="text-danger"></span>
+            </div>
+            <div class="form-group">
+                <input type="submit" value="Create" class="btn btn-primary" />
+            </div>
+        </form>
+    </div>
+</div>
+
+<div>
+    <a asp-action="Index">Back to List</a>
+</div>*@
+<!DOCTYPE html>
+<html>
+	<head>
+		<meta charset="utf-8">
+		<title>Sign Up</title>
+		<meta name="viewport" content="width=device-width, initial-scale=1.0">
+		
+		<!-- MATERIAL DESIGN ICONIC FONT -->
+		<link rel="stylesheet" href="~/Assests/fonts/material-design-iconic-font/css/material-design-iconic-font.min.css">
+
+		<!-- STYLE CSS -->
+		<link rel="stylesheet" href="~/Assests/css/style.css">
+	</head>
+
+	<body>
+		
+		<div class="wrapper" style="background-color:antiquewhite">
+			
+			<div class="inner">
+				<div class="image-holder">
+					<img src="~/Assests/images/meetingroom.jpeg" alt="hall" height=600px;>
+				</div>
+				<form method="POST" asp-action="Register" enctype="multipart/form-data">
+					<h3 style="margin-top: -15px;">welcome!</h3>
+					<p style="font-size: 25px;text-align: center;position: relative;top: -25px;">Sign up and discover our great services  </p>
+					<div class="form-group">
+						@*<label asp-for="Fname" class="control-label"></label>*@
+						<input asp-for="Fname" class="form-control" placeholder="First Name"/>
+						<span asp-validation-for="Fname" class="text-danger"></span>
+           
+						@*<label asp-for="Lname" class="control-label"></label>*@
+						<input asp-for="Lname" class="form-control"  placeholder="Last Name" />
+						<span asp-validation-for="Lname" class="text-danger"></span>
+					</div>
+					<div class="form-wrapper">
+                        <label for="UserName"></label>
+                        <input type="text" name="UserName" id="UserName" placeholder="UserName" class="form-control"/>
+                        <i class="zmdi zmdi-account"></i>
+                    </div>
+					
+					<div class="form-wrapper">
+						@*<label asp-for="Email" class="control-label"></label>*@
+						<input asp-for="Email" class="form-control" placeholder="Email Address" />
+						<span asp-validation-for="Email" class="text-danger"></span>
+						<i class="zmdi zmdi-email"></i>
+					</div>
+					
+					<div class="form-wrapper">
+						
+							@*<label asp-for="Phonenumber" class="control-label"></label>*@
+							<input asp-for="Phonenumber" class="form-control" placeholder="Phone Number" />
+							<span asp-validation-for="Phonenumber" class="text-danger"></span>
+							<i class="zmdi zmdi-phone"></i>
+						
+					</div>
+					 <div class="form-wrapper">
+						@*<label asp-for="ImagePath" class="control-label"></label>*@
+						<input asp-for="ImageFile" class="form-control" placeholder="Profile Picture"/>
+						<span asp-validation-for="ImageFile" class="text-danger"></span>
+						<i class="zmdi zmdi-account-circle"></i>
+
+					</div>
+					
+					<div class="form-wrapper">
+                        <input type="password" name="password" id="password" placeholder="Password" class="form-control" />
+						<label for="password"></label>
+						@*<i class="zmdi zmdi-lock"></i>*@
+                    </div>
+					
+					<button>Sign Up
+						<i class="zmdi zmdi-arrow-right"></i>
+					</button>
+					
+						<a asp-action="Loginss" asp-controller="LoginAndRegister" 
+					style="font-size: 13px;color: black;text-decoration: none;display:flex; justify-content:center; padding-top:20px;">
+						Already Have An Account ?</a>
+				</form>
+			</div>
+		</div>
+	@if(TempData["alertMessage"]!=null)
+   {
+      <script type="text/javascript">
+       alert("@TempData["alertMessage"]");
+      </script>
+   }
+	</body>
+</html>

@@ -1,0 +1,237 @@
+﻿<!DOCTYPE html>
+
+<html>
+<head>
+    <meta charset="UTF-8">
+    <meta name="description" content="Sona Template">
+    <meta name="keywords" content="Sona, unica, creative, html">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta http-equiv="X-UA-Compatible" content="ie=edge">
+    <title>The Halls</title>
+
+    <!-- Google Font -->
+    <link href="https://fonts.googleapis.com/css?family=Lora:400,700&display=swap" rel="stylesheet">
+    <link href="https://fonts.googleapis.com/css?family=Cabin:400,500,600,700&display=swap" rel="stylesheet">
+
+    <!-- Css Styles -->
+    <link rel="stylesheet" href="~/AssestsTamplate/css/bootstrap.min.css" type="text/css">
+    <link rel="stylesheet" href="~/AssestsTamplate/css/font-awesome.min.css" type="text/css">
+    <link rel="stylesheet" href="~/AssestsTamplate/css/elegant-icons.css" type="text/css">
+    <link rel="stylesheet" href="~/AssestsTamplate/css/flaticon.css" type="text/css">
+    <link rel="stylesheet" href="~/AssestsTamplate/css/owl.carousel.min.css" type="text/css">
+    <link rel="stylesheet" href="~/AssestsTamplate/css/nice-select.css" type="text/css">
+    <link rel="stylesheet" href="~/AssestsTamplate/css/jquery-ui.min.css" type="text/css">
+    <link rel="stylesheet" href="~/AssestsTamplate/css/magnific-popup.css" type="text/css">
+    <link rel="stylesheet" href="~/AssestsTamplate/css/slicknav.min.css" type="text/css">
+    <link rel="stylesheet" href="~/AssestsTamplate/css/style.css" type="text/css">
+
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/4.7.0/css/font-awesome.min.css">
+
+
+  <style>
+     
+   .hoverlink a:hover{
+          font-weight:bold;
+          color:black !important;
+      }
+      .ulpadding{
+            padding-left: 0rem !important;
+      }
+      .spanstyle{
+            position: relative;
+            top: 10px;
+            font-family: -webkit-body;
+            font-weight: bold;
+            font-size: 17px;
+      }
+      .menu-item .logo {
+    padding: 17px 0 !important;
+}
+.menu-item .nav-menu .mainmenu li a {
+    font-size: 18px !important; 
+}
+  </style>
+</head>
+<body>
+     <!-- Page Preloder -->
+    <div id="preloder">
+        <div class="loader"></div>
+    </div>
+
+
+    <!-- Offcanvas Menu Section Begin -->
+    <div class="offcanvas-menu-overlay"></div>
+    <div class="canvas-open">
+        <i class="icon_menu"></i>
+    </div>
+    <div class="offcanvas-menu-wrapper">
+        <div class="canvas-close">
+            <i class="icon_close"></i>
+        </div>
+       
+        <div class="header-configure-area">
+           
+            <a asp-controller="Halls" asp-action="HallsCardHome" class="bk-btn">Booking Now</a>
+        </div>
+        <nav class="mainmenu mobile-menu">
+            <ul>
+               <li class="active"><a asp-controller="Home" asp-action="Index" >Home</a></li>
+                <li><a asp-controller="Halls" asp-action="HallsCardHome">Halls</a></li>
+                <li><a asp-controller="AboutUs" asp-action="AboutUsHome">About Us</a></li>
+                <li><a href="#">Hall Catigories</a>
+                    <ul class="dropdown">
+                        <li><a href="#catsection">Wedding Halls</a></li>
+                        <li><a href="#catsection">Meeting Halls</a></li>
+                        <li><a href="#catsection">Study Halls</a></li>
+                        <li><a href="#catsection">Music Halls</a></li>
+                    </ul>
+                </li>
+                <li><a asp-controller="ContactUs" asp-action="Create">Contact Us</a></li>
+                <li><a asp-controller="LoginAndRegister" asp-action="Loginss">Sign In</a></li>
+                <li><a asp-controller="LoginAndRegister" asp-action="Register">Sign Up</a></li>
+            </ul>
+        </nav>
+        <div id="mobile-menu-wrap">
+
+        </div>
+        <div class="top-social">
+      
+            <a href="https://web.facebook.com/?_rdc=1&_rdr/"><i class="fa fa-facebook"></i></a>
+            <a href="https://jo.linkedin.com/"><i class="fa fa-linkedin"></i></a>
+            <a href="https://www.instagram.com/"><i class="fa fa-instagram"></i></a>
+            <a href="https://twitter.com/"><i class="fa fa-twitter"></i></a>
+            <a href="https://telegram.org/blog/login"><i class="fa fa-telegram"></i></a>
+
+        </div>
+        <ul class="top-widget">   
+            <li><i class="fa fa-phone"></i> (+962) 786543216</li>
+            <li class="hoverlink"><i class="fa fa-envelope"></i> <a href="mailto:hajarmalsharea@gmail.com">TheHalls@gmail.com</a></li>
+        </ul>
+    </div>
+    <!-- Offcanvas Menu Section End -->
+
+
+    
+    <!-- Header Section Begin -->
+    <header class="header-section" >
+       
+        <div class="menu-item">
+            <div class="container">
+                <div class="row">
+    
+                    <div class="col-lg-2">
+                        <div class="logo">
+                            
+                               <img src="~/AssestsTamplate/img/logo112.png" alt="hallslogo" style="height:43px; width: 47px;">
+                          <span class="spanstyle"  style=" color: black;"> THE HALLS</span>
+                        </div>
+                    </div>
+                    
+                    <div class="col-lg-10">
+                        <div class="nav-menu"> 
+                            <nav class="mainmenu">
+                                <ul style="font-family: -webkit-body;">
+                                    <li><a asp-controller="Home" asp-action="Index" style="font-weight:bold; font-size:19px;">Home</a></li>
+                                    <li><a asp-controller="Halls" asp-action="HallsCardHome" style="font-weight:bold;  font-size:19px;">Halls</a></li>
+                                    <li><a asp-controller="AboutUs" asp-action="AboutUsHome" style="font-weight:bold; font-size:19px;">About Us</a></li>
+                                    <li><a asp-controller="Home" asp-action="Index" style="font-weight:bold; font-size:19px;">Hall Catigories</a>
+                                         <ul class="dropdown">
+                                            <li><a href="#catsection">Wedding Halls</a></li>
+                                            <li><a href="#catsection">Meeting Halls</a></li>
+                                            <li><a href="#catsection">Study Halls</a></li>
+                                            <li><a href="#catsection">Music Halls</a></li>
+                                        </ul>
+                                    </li>
+                                    
+                                    <li><a asp-controller="ContactUs" asp-action="Create" style="font-weight:bold; font-size:19px;">Contact Us</a></li>
+                                    <li><a asp-controller="LoginAndRegister" asp-action="Loginss" style="margin-right:6px;font-weight:bold; font-size:19px;" target="_blank">Sign In</a></li>|
+                                    <li><a asp-controller="LoginAndRegister" asp-action="Register" style="font-weight:bold; font-size:19px;" target="_blank">Sign Up</a></li>
+                                </ul>
+                            </nav>
+                            @*<div class="nav-right search-switch">
+                                <i class="icon_search"></i>
+                            </div>*@
+                        </div>
+                    </div>
+          
+                </div>
+            </div>
+        </div>
+    </header>
+   
+
+    <!-- Header End -->
+    <div>
+        @RenderBody()
+    </div>
+     <!-- Footer Section Begin -->
+    <footer class="footer-section" style="padding-bottom:0px;">
+    
+        <div class="container">
+            <div class="footer-text">
+                <div class="row">
+                    <div class="col-lg-4">
+                        <div class="ft-about">
+                            <div class="logo">
+                              <h6 style="color: antiquewhite;font-size: 26px;font-family: inherit;">THE HALLS</h6>
+                            </div>
+                            <p style="font-size: 21px;">Hall Reservation System<br /> </p>
+                            <div class="fa-social">
+                                <a href="https://web.facebook.com/?_rdc=1&_rdr/"><i class="fa fa-facebook"></i></a>
+                                <a href="https://jo.linkedin.com/"><i class="fa fa-linkedin"></i></a>
+                                <a href="https://www.instagram.com/"><i class="fa fa-instagram"></i></a>
+                                <a href="https://twitter.com/"><i class="fa fa-twitter"></i></a>
+                                <a href="https://telegram.org/blog/login"><i class="fa fa-telegram"></i></a>
+                            </div>
+                        </div>
+                    </div>
+                    <div class="col-lg-3 offset-lg-1">
+                        <div class="ft-contact">
+                            <h6 style="color:antiquewhite;">Contact Us</h6>
+                            <ul class="ulpadding">
+                                <li><i class="fa fa-phone" style="color:antiquewhite"></i> 0786543216</li>
+                                <li class="hoverlink"><a href="mailto:hajarmalsharea@gmail.com" style="color:#aaaab3"> <i class="fa fa-send" style="color:antiquewhite"></i> TheHalls@gmail.com</a></li>
+                                
+                            </ul>
+                        </div>
+                    </div>
+                    <div class="col-lg-3 offset-lg-1">
+                        <div class="ft-newslatter">
+                            <h6 style="color:antiquewhite;">Adderss</h6>
+                            
+                            
+                            <p> <i class="fa fa-map-marker" style="color:antiquewhite"></i> Jordan-Amman khalda <br />   Khalda Street</p>
+                            @*<form action="#" class="fn-form">
+                                <input type="text" placeholder="Email">
+                                <button type="submit" style="background: antiquewhite;"><i class="fa fa-send" style="color:#222736"></i></button>
+                            </form>*@
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+        <div class="copyright-option">
+            <div class="container">
+                <div class="row">
+                   
+                    <div class="col">
+                        <div class="co-text" style="text-align: center;"><p><!-- Link back to Colorlib can't be removed. Template is licensed under CC BY 3.0. -->
+  Copyright &copy;<script>document.write(new Date().getFullYear());</script> All rights reserved |<i class="fa fa-heart" aria-hidden="true"></i><div>by <span style="color: antiquewhite;font-size: 17px;font-family: inherit;" >THE HALLS</span></div> 
+  <!-- Link back to Colorlib can't be removed. Template is licensed under CC BY 3.0. --></p></div>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </footer>
+    <!-- Footer Section End -->
+     <!-- Js Plugins -->
+    <script src="~/AssestsTamplate/js/jquery-3.3.1.min.js"></script>
+    <script src="~/AssestsTamplate/js/bootstrap.min.js"></script>
+    <script src="~/AssestsTamplate/js/jquery.magnific-popup.min.js"></script>
+    <script src="~/AssestsTamplate/js/jquery.nice-select.min.js"></script>
+    <script src="~/AssestsTamplate/js/jquery-ui.min.js"></script>
+    <script src="~/AssestsTamplate/js/jquery.slicknav.js"></script>
+    <script src="~/AssestsTamplate/js/owl.carousel.min.js"></script>
+    <script src="~/AssestsTamplate/js/main.js"></script>
+</body>
+</html>

@@ -1,0 +1,45 @@
+﻿@model Hall_Booking.Models.HallCategory
+@{ Layout ="~/Views/Shared/AdminLayout.cshtml";}
+@{
+   
+}
+
+<!DOCTYPE html>
+
+<html>
+<head>
+    <meta name="viewport" content="width=device-width" />
+    <title>Details</title>
+</head>
+<body>
+
+<div>
+    <h4>HallCategory</h4>
+    <hr />
+    <dl class="row">
+        <dt class = "col-sm-2">
+            @Html.DisplayNameFor(model => model.CategoryName)
+        </dt>
+        <dd class = "col-sm-10">
+            @Html.DisplayFor(model => model.CategoryName)
+        </dd>
+         <dt class = "col-sm-2">
+            @Html.DisplayNameFor(model => model.HallDescription)
+        </dt>
+        <dd class = "col-sm-10">
+            @Html.DisplayFor(model => model.HallDescription)
+        </dd>
+        <dt class = "col-sm-2">
+            @Html.DisplayNameFor(model => model.ImagePath)
+        </dt>
+        <dd class = "col-sm-10">
+            @Html.DisplayFor(model => model.ImagePath)
+        </dd>
+    </dl>
+</div>
+<div>
+    <a asp-action="Edit" asp-route-id="@Model.Id" style="color: black;background-color: antiquewhite;text-decoration: none;padding: 13px;border-radius: 18px;">Edit</a> |
+    <a asp-action="Index" style="color: black;background-color: antiquewhite;text-decoration: none;padding: 13px;border-radius: 18px;">Back to List</a>
+</div>
+</body>
+</html>

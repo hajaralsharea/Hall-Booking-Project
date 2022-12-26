@@ -1,0 +1,222 @@
+﻿@model IEnumerable<Hall_Booking.Models.AboutUs>
+
+
+@*
+    For more information on enabling MVC for empty projects, visit https://go.microsoft.com/fwlink/?LinkID=397860
+*@
+@{
+     Layout="~/Views/Shared/HomeLayout.cshtml";
+}
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="utf-8">
+    <title>About Us The Halls</title>
+    <meta content="width=device-width, initial-scale=1.0" name="viewport">
+    <meta content="" name="keywords">
+    <meta content="" name="description">
+
+    <!-- Favicon -->
+    <link href="~/AssestsAbout/img/favicon.ico" rel="icon">
+
+    <!-- Google Web Fonts -->
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=Roboto:wght@400;500&family=Playfair+Display:wght@600;700&display=swap" rel="stylesheet"> 
+
+    <!-- Icon Font Stylesheet -->
+    <link href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/5.10.0/css/all.min.css" rel="stylesheet">
+    <link href="https://cdn.jsdelivr.net/npm/bootstrap-icons@1.4.1/font/bootstrap-icons.css" rel="stylesheet">
+
+    <!-- Libraries Stylesheet -->
+    <link href="~/AssestsAbout/lib/animate/animate.min.css" rel="stylesheet">
+    <link href="~/AssestsAbout/lib/owlcarousel/assets/owl.carousel.min.css" rel="stylesheet">
+
+    <!-- Customized Bootstrap Stylesheet -->
+    <link href="~/AssestsAbout/css/bootstrap.min.css" rel="stylesheet">
+
+    <!-- Template Stylesheet -->
+    <link href="~/AssestsAbout/css/style.css" rel="stylesheet">
+
+     <!-- Css Styles -->
+   
+        <link rel="stylesheet" href="~/AssestsTamplate/css/font-awesome.min.css" type="text/css">
+<style>
+    .img-twice::before{
+        background: #ebc99b;
+    }
+    .btn-primary{
+        background-color: #ebc99b;
+        border-color: #ebc99b;
+    }
+    .text-primary{
+        color:#ebc99b !important;
+    }
+    
+    .team-item .team-social{
+        background:#ebc99b;
+    }
+</style>
+
+</head>
+
+<body>
+    <!-- Spinner Start -->
+    <div id="spinner" class="show bg-white position-fixed translate-middle w-100 vh-100 top-50 start-50 d-flex align-items-center justify-content-center">
+        <div class="spinner-grow text-primary" role="status"></div>
+    </div>
+    <!-- Spinner End -->
+
+    <!-- Page Header Start -->
+    <div class="container-fluid page-header py-6 wow fadeIn" data-wow-delay="0.1s" style="height: 450px;">
+@*        <img src="~/AssestsAbout/img/headerhall1.jpg" style="background-repeat:no-repeat;"/>
+*@        <div class="container text-center pt-5 pb-3">
+            <h1 class="display-4 text-white animated slideInDown mb-3">About Us</h1>
+            <nav aria-label="breadcrumb animated slideInDown">
+                <ol class="breadcrumb justify-content-center mb-0" style="background: #ffffff00;">
+                    <li class="breadcrumb-item"><a  asp-controller="Home" asp-action="Index" class="text-white">Home</a></li>
+                  
+                    <li class="breadcrumb-item text-primary active" aria-current="page"><a class="text-white" href="#">About</a></li>
+                </ol>
+            </nav>
+        </div>
+    </div>
+    <!-- Page Header End -->
+
+
+    <!-- About Start -->
+    <div class="container-xxl py-6">
+        <div class="container">
+            <div class="row g-5">
+                <div class="col-lg-6 wow fadeInUp" data-wow-delay="0.1s">
+                    <div class="row img-twice position-relative h-100">
+                        <div class="col-6">@*~/AssestsAbout/img/aboutyy.jpg*@
+                            <img class="img-fluid rounded" src="~/AssestsAbout/img/abouthh2.jpg" alt="" style="height: 360px;">
+                        </div>
+                        <div class="col-6 align-self-end">@*~/AssestsAbout/img/about-2.jpg*@
+                           
+                            <img class="img-fluid rounded" src="~/AssestsAbout/img/aboutthh.jpg" alt="photo"style="height: 355px;">
+                        </div>
+                    </div>
+                </div>
+                <div class="col-lg-6 wow fadeInUp" data-wow-delay="0.5s">
+                    <div class="h-100">
+                        <p class="text-primary text-uppercase mb-2">// About Us</p> @*to make your event more elegancy*@
+                        <h1 class="display-6 mb-4"> THE HALLS <br />  Online halls reservation system </h1>
+                        @foreach(var item in Model)
+                        {
+                            <p>@item.Text</p>
+                            <p>@item.Text2</p>
+                        }
+                        
+                       
+                        
+                        <p style="font-weight:bold;"> We Are Here To Make Your Event More Elegancy!</p>
+                        <div class="row g-2 mb-4">
+                            <div class="col-sm-6">
+                                <i class="fa fa-check text-primary me-2"></i>Wedding Halls
+                            </div>
+                            <div class="col-sm-6">
+                                <i class="fa fa-check text-primary me-2"></i>Meeting Halls
+                            </div>
+                            <div class="col-sm-6">
+                                <i class="fa fa-check text-primary me-2"></i>Study Halls
+                            </div>
+                            <div class="col-sm-6">
+                                <i class="fa fa-check text-primary me-2"></i>Music Halls
+                            </div>
+                        </div>
+                        <a class="btn btn-primary rounded-pill py-3 px-5" asp-action="HallsCardHome" asp-controller="Halls">Our Halls</a>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </div>
+    <!-- About End -->
+
+
+    <!-- Team Start -->
+    <div class="container-xxl py-6">
+        <div class="container">
+            <div class="text-center mx-auto mb-5 wow fadeInUp" data-wow-delay="0.1s" style="max-width: 500px;">
+                <p class="text-primary text-uppercase mb-2">// Our Team</p>
+                <h1 class="display-6 mb-4">Leadership</h1>
+            </div>
+            <div class="row g-4">
+               
+                <div class="col-lg-4 col-md-6 wow fadeInUp" data-wow-delay="0.3s">
+                    <div class="team-item text-center rounded overflow-hidden">
+                        <img class="img-fluid" src="~/AssestsAbout/img/person_2.jpg" alt="">
+                        <div class="team-text">
+                            <div class="team-title">
+                                <h5>Joen Ayman</h5>
+                                <span>Co-Founder</span>
+                            </div>
+                            <div class="team-social">
+                                <a class="btn btn-square btn-light rounded-circle" href="https://web.facebook.com/"><i class="fab fa-facebook-f"></i></a>
+                                <a class="btn btn-square btn-light rounded-circle" href="https://twitter.com/"><i class="fab fa-twitter"></i></a>
+                                <a class="btn btn-square btn-light rounded-circle" href="https://www.instagram.com/"><i class="fab fa-instagram"></i></a>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+                 <div class="col-lg-4 col-md-6 wow fadeInUp" data-wow-delay="0.1s">
+                    <div class="team-item text-center rounded overflow-hidden">
+                        <img class="img-fluid" src="~/AssestsAbout/img/person_1.jpg" alt="">
+                        <div class="team-text">
+                            <div class="team-title">
+                                <h5>Julia Adam</h5>
+                                <span>Founder</span>
+                            </div>
+                            <div class="team-social">
+                                <a class="btn btn-square btn-light rounded-circle" href="https://web.facebook.com/"><i class="fab fa-facebook-f"></i></a>
+                                <a class="btn btn-square btn-light rounded-circle" href="https://twitter.com/"><i class="fab fa-twitter"></i></a>
+                                <a class="btn btn-square btn-light rounded-circle" href="https://www.instagram.com/"><i class="fab fa-instagram"></i></a>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+                <div class="col-lg-4 col-md-6 wow fadeInUp" data-wow-delay="0.5s">
+                    <div class="team-item text-center rounded overflow-hidden">
+                        <img class="img-fluid" src="~/AssestsAbout/img/person_3.jpg" alt="">
+                        <div class="team-text">
+                            <div class="team-title">
+                                <h5>Omar shadi</h5>
+                                <span>CEO</span>
+                            </div>
+                            <div class="team-social">
+                                <a class="btn btn-square btn-light rounded-circle" href="https://web.facebook.com/"><i class="fab fa-facebook-f"></i></a>
+                                <a class="btn btn-square btn-light rounded-circle" href="https://twitter.com/"><i class="fab fa-twitter"></i></a>
+                                <a class="btn btn-square btn-light rounded-circle" href="https://www.instagram.com/"><i class="fab fa-instagram"></i></a>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+            
+            </div>
+        </div>
+    </div>
+    <!-- Team End -->
+
+
+    <!-- Back to Top -->
+    <a href="#" class="btn btn-lg btn-primary btn-lg-square rounded-circle back-to-top"><i class="bi bi-arrow-up"></i></a>
+
+
+    <!-- JavaScript Libraries -->
+    <script src="https://code.jquery.com/jquery-3.4.1.min.js"></script>
+    <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.0.0/dist/js/bootstrap.bundle.min.js"></script>
+    <script src="~/AssestsAbout/lib/wow/wow.min.js"></script>
+    <script src="~/AssestsAbout/lib/easing/easing.min.js"></script>
+    <script src="~/AssestsAbout/lib/waypoints/waypoints.min.js"></script>
+    <script src="~/AssestsAbout/lib/counterup/counterup.min.js"></script>
+    <script src="~/AssestsAbout/lib/owlcarousel/owl.carousel.min.js"></script>
+
+    <!-- Template Javascript -->
+    <script src="~/AssestsAbout/js/main.js"></script>
+</body>
+
+</html>
+
+

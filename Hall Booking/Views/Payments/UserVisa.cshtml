@@ -1,0 +1,90 @@
+﻿@model IEnumerable<Hall_Booking.Models.Payment>
+
+
+@{
+    ViewData["Title"] = "UserVisa";
+    Layout ="~/Views/Shared/UserLayout.cshtml";
+    var user = ViewBag.UserId;
+    var balance = ViewBag.balance;
+}
+<head>
+    <style>
+           .linkh2 a:hover{
+            font-weight:bold;
+        }
+        table thead tr th{
+            font-weight:bold !important;
+        }
+            .table thead th {
+            border-top: 0;
+            border-bottom-width: 1px;
+            font-family: -webkit-body !important;
+            font-weight: initial;
+            font-size: 17px;
+            padding: 24px;
+
+        }
+         .table tbody td {
+            border-top: 0;
+            border-bottom-width: 1px;
+            font-family: -webkit-body !important;
+            font-weight: initial;
+            font-size: 17px;
+            padding: 24px;
+        }
+    </style>
+</head>
+
+<h1 style=" font-family: -webkit-body; font-weight: bold;  font-size: 23px;"> <i class="mdi mdi-credit-card menu-icon"></i>  My Visa Card</h1>
+<duv class="table-responsive">
+<table class="table">
+    <thead>
+  
+        <tr>
+            <th>
+                Visa Entry Date 
+            </th>
+            <th>
+               Visa Name
+            </th>
+            <th>
+                Visa Number
+            </th>
+            <th>
+               Balance
+            </th>
+          
+            <th></th>
+        </tr>
+    </thead>
+    <tbody>
+@foreach (var item in Model) {
+            if (ViewBag.UserId == item.UserId)
+            {
+                 <tr>
+            <td>
+                @Html.DisplayFor(modelItem => item.PaymentDate)
+            </td>
+            <td>
+                @Html.DisplayFor(modelItem => item.CardName)
+            </td>
+            <td>
+                @Html.DisplayFor(modelItem => item.CardSequanceNumber)
+            </td>
+            
+            <td>
+               @*@balance*@
+               @Html.DisplayFor(modelItem => item.CardBalance)
+            </td>
+          
+            <td class="linkh2">
+                <a asp-action="Edit" asp-route-id="@item.Id"  style="color: black;background-color: antiquewhite;text-decoration: none;padding: 13px;border-radius: 18px;">Update</a> |
+                <a asp-action="Delete" asp-route-id="@item.Id"  style="color: black;background-color: antiquewhite;text-decoration: none;padding: 13px;border-radius: 18px;">Delete</a>
+            </td>
+        </tr>
+            }
+           
+}
+    </tbody>
+</table>
+</duv>

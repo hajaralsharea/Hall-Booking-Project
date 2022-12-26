@@ -1,0 +1,75 @@
+﻿@model IEnumerable<Hall_Booking.Models.AboutUs>
+
+@{
+    Layout ="~/Views/Shared/AdminLayout.cshtml";
+    ViewData["Title"] = "Index";
+}
+<head>
+    <style>
+              .linkho a:hover{
+          font-weight:bold;
+      }
+  
+         th,td{
+             padding: 24px;
+         }
+         .table th img, .table td img {
+            width: 63px;
+            height: 63px;
+   
+        }
+         table thead tr th{
+            font-weight:bold !important;
+        }
+        .table thead th {
+            border-top: 0;
+            border-bottom-width: 1px;
+            font-family: -webkit-body !important;
+            font-weight: initial;
+            font-size: 17px;
+        }
+         .table tbody td {
+            border-top: 0;
+            border-bottom-width: 1px;
+            font-family: -webkit-body !important;
+            font-weight: initial;
+            font-size: 17px;
+        }
+    </style>
+</head>
+<h1 style="padding: 18px 3px; font-family: -webkit-body;">Manage About Us </h1>
+
+
+<div class="table-responsive">
+<table class="table">
+    <thead>
+        <tr>
+            <th>
+                First Paragraph 
+            </th>
+            <th>
+                Second Paragraph
+            </th>
+           
+           
+            <th></th>
+        </tr>
+    </thead>
+    <tbody>
+@foreach (var item in Model) {
+        <tr>
+            <td>
+                @Html.DisplayFor(modelItem => item.Text)
+            </td>
+            <td>
+                @Html.DisplayFor(modelItem => item.Text2)
+            </td>
+          
+            <td class="linkho">
+                <a asp-action="Edit" asp-route-id="@item.Id" style="color: black;background-color: antiquewhite;text-decoration: none;padding: 13px;border-radius: 18px;" > Update </a> 
+            </td>
+        </tr>
+}
+    </tbody>
+</table>
+</div>

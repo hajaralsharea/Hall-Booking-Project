@@ -1,0 +1,36 @@
+﻿@model Hall_Booking.Models.AboutUs
+
+@{
+      Layout ="~/Views/Shared/AdminLayout.cshtml";
+    ViewData["Title"] = "Edit";
+}
+
+<h1  style=" font-family: -webkit-body; font-weight: bold;  font-size: 23px;"> <i class="mdi mdi-border-color menu-icon"></i>Edit About Us</h1>
+
+
+<hr />
+<div class="row">
+    <div class="col-md-4">
+        <form asp-action="Edit">
+            <div asp-validation-summary="ModelOnly" class="text-danger"></div>
+            <input type="hidden" asp-for="Id" />
+            <div class="form-group">
+                <label asp-for="Text" class="control-label" style=" font-family: -webkit-body;  font-size: 20px;"> First Paragraph</label>
+                <input asp-for="Text" class="form-control" />
+                <span asp-validation-for="Text" class="text-danger"></span>
+            </div>
+            <div class="form-group">
+                <label asp-for="Text2" class="control-label" style=" font-family: -webkit-body;  font-size: 20px;"> Second Paragraph</label>
+                <input asp-for="Text2" class="form-control" />
+                <span asp-validation-for="Text2" class="text-danger"></span>
+            </div>
+          
+            <div class="form-group">
+                <input type="submit" value="Save" class="btn btn-primary"   style="color: black;background-color: antiquewhite;text-decoration: none;padding: 13px;border-radius: 18px;  border-color: antiquewhite;width: 100px;"/>
+            </div>
+        </form>
+    </div>
+</div>
+
+
+

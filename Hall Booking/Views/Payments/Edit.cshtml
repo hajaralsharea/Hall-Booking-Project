@@ -1,0 +1,60 @@
+﻿@model Hall_Booking.Models.Payment
+
+@{
+    ViewData["Title"] = "Edit";
+     Layout ="~/Views/Shared/UserLayout.cshtml";
+}
+<head>
+    <style>
+            .linkh2 a:hover{
+            font-weight:bold;
+        }
+    </style>
+</head>
+
+<h1  style=" font-family: -webkit-body; font-weight: bold;  font-size: 23px;"><i class="mdi mdi-ticket-account menu-icon"></i>  Update Your Visa Info</h1>
+
+<hr />
+
+<div class="row">
+    <div class="col-md-4">
+        <form asp-action="Edit">
+            <div asp-validation-summary="ModelOnly" class="text-danger"></div>
+            <input type="hidden" asp-for="Id" />
+            <div class="form-group" hidden>
+                <label asp-for="PaymentDate" class="control-label"></label>
+                <input asp-for="PaymentDate" class="form-control" />
+                <span asp-validation-for="PaymentDate" class="text-danger"></span>
+            </div>
+            <div class="form-group">
+                <label asp-for="CardName" class="control-label"  style=" font-family: -webkit-body;  font-size: 20px;"> Visa Name</label>
+                <input asp-for="CardName" class="form-control" />
+                <span asp-validation-for="CardName" class="text-danger"></span>
+            </div>
+            <div class="form-group">
+                <label asp-for="CardSequanceNumber" class="control-label" style=" font-family: -webkit-body;  font-size: 20px;">Visa Number</label>
+                <input asp-for="CardSequanceNumber" class="form-control" />
+                <span asp-validation-for="CardSequanceNumber" class="text-danger"></span>
+            </div>
+            <div class="form-group">
+                <label asp-for="CardBalance" class="control-label" style=" font-family: -webkit-body;  font-size: 20px;"> Balance</label>
+                <input asp-for="CardBalance" class="form-control" />
+                <span asp-validation-for="CardBalance" class="text-danger"></span>
+            </div>
+            <div class="form-group" hidden>
+                <label asp-for="UserId" class="control-label"></label>
+                <select asp-for="UserId" class="form-control" asp-items="ViewBag.UserId"></select>
+                <span asp-validation-for="UserId" class="text-danger"></span>
+            </div>
+            <div class="form-group linkh2">
+                <input type="submit" value="Update" class="btn btn-primary"  style="color: black;background-color: antiquewhite;text-decoration: none;padding: 13px;border-radius: 18px; border-color:antiquewhite; font-weight:normal;"/>|
+                 <a asp-action="UserVisa"  style="color: black;background-color: antiquewhite;text-decoration: none;padding: 13px;border-radius: 18px;">Back</a>
+            </div>
+        </form>
+    </div>
+</div>
+
+@*<div>
+    <a asp-action="UserVisa"  style="color: black;background-color: antiquewhite;text-decoration: none;padding: 13px;border-radius: 18px;">Back</a>
+</div>*@
+

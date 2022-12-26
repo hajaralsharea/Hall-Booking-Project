@@ -1,0 +1,72 @@
+﻿@model Hall_Booking.Models.Booking
+
+@{
+    ViewData["Title"] = "Details";
+    Layout ="~/Views/Shared/AdminLayout.cshtml";
+}
+
+<head>
+    <title>
+        Booking Details
+    </title>
+    <style>
+          .paddingvalue{
+            padding: 10px;
+        }
+    </style>
+</head> 
+<h1> <i class="mdi mdi-clipboard-text menu-icon"></i>Booking Details</h1>
+
+<div>
+    
+    <hr />
+    <dl class="row">
+        <dt class = "col-sm-2 paddingvalue">
+            @Html.DisplayNameFor(model => model.BookingNotes)
+        </dt>
+        <dd class = "col-sm-10 paddingvalue">
+            @Html.DisplayFor(model => model.BookingNotes)
+        </dd>
+        <dt class = "col-sm-2 paddingvalue">
+            @Html.DisplayNameFor(model => model.BookingDate)
+        </dt>
+        <dd class = "col-sm-10 paddingvalue">
+            @Html.DisplayFor(model => model.BookingDate)
+        </dd>
+
+        <dt class = "col-sm-2 paddingvalue">
+            @Html.DisplayNameFor(model => model.StartDate)
+        </dt>
+        <dd class = "col-sm-10 paddingvalue">
+            @Html.DisplayFor(model => model.StartDate)
+        </dd>
+        <dt class = "col-sm-2 paddingvalue">
+            @Html.DisplayNameFor(model => model.EndDate)
+        </dt>
+        <dd class = "col-sm-10 paddingvalue">
+            @Html.DisplayFor(model => model.EndDate)
+        </dd>
+        <dt class = "col-sm-2 paddingvalue">
+            @Html.DisplayNameFor(model => model.Hall)
+        </dt>
+        <dd class = "col-sm-10 paddingvalue">
+            @Html.DisplayFor(model => model.Hall.Id)
+        </dd>
+        <dt class = "col-sm-2 paddingvalue">
+            @Html.DisplayNameFor(model => model.User)
+        </dt>
+        <dd class = "col-sm-10 paddingvalue">
+            @Html.DisplayFor(model => model.User.Id)
+        </dd>
+         <dt class = "col-sm-2 paddingvalue">
+            @Html.DisplayNameFor(model => model.Status)
+        </dt>
+        <dd class = "col-sm-10 paddingvalue">
+            @Html.DisplayFor(model => model.Status.Id)
+        </dd>
+    </dl>
+</div>
+<div>
+    @*<a asp-action="Edit" asp-route-id="@Model.Id">Edit</a> |*@
+    <a asp-action="SearchBooking" style="color: black;background-color: antiquewhite;text-decoration: none;padding: 13px;border-radius: 18px;">Back to List</a>
+</div>

@@ -1,0 +1,53 @@
+﻿@model Hall_Booking.Models.Payment
+
+@{
+    ViewData["Title"] = "Create";
+    Layout ="~/Views/Shared/UserLayout.cshtml";
+}
+
+<h1 style=" font-family: -webkit-body; font-weight: bold;  font-size: 23px;"> <i class="mdi mdi-credit-card-plus menu-icon"></i>  Fill your visa info </h1>
+
+
+<hr />
+<div class="row">
+    <div class="col-md-4">
+        <form asp-action="Create">
+            <div asp-validation-summary="ModelOnly" class="text-danger"></div>
+            <div class="form-group" hidden>
+                <label asp-for="PaymentDate" class="control-label" style=" font-family: -webkit-body;  font-size: 20px;"></label>
+                <input asp-for="PaymentDate" class="form-control" />
+                <span asp-validation-for="PaymentDate" class="text-danger"></span>
+            </div>
+            <div class="form-group">
+                <label asp-for="CardName" class="control-label" style=" font-family: -webkit-body;  font-size: 20px;">Visa Name</label>
+                <input asp-for="CardName" class="form-control" />
+                <span asp-validation-for="CardName" class="text-danger"></span>
+            </div>
+            <div class="form-group">
+                <label asp-for="CardSequanceNumber" class="control-label" style=" font-family: -webkit-body;  font-size: 20px;"> Visa Number</label>
+                <input asp-for="CardSequanceNumber" class="form-control" />
+                <span asp-validation-for="CardSequanceNumber" class="text-danger"></span>
+            </div>
+            <div class="form-group">
+                <label asp-for="CardBalance" class="control-label" style=" font-family: -webkit-body;  font-size: 20px;"> Balance</label>
+                <input asp-for="CardBalance" class="form-control" />
+                <span asp-validation-for="CardBalance" class="text-danger"></span>
+            </div>
+            <div class="form-group" hidden>
+                <label asp-for="UserId" class="control-label"></label>
+                <select asp-for="UserId" class ="form-control" asp-items="ViewBag.UserId"></select>
+            </div>
+            <div class="form-group">
+                <input type="submit" value="Create" class="btn btn-primary" style="color: black;background-color: antiquewhite;text-decoration: none;padding: 13px;border-radius: 18px;border-color:antiquewhite"/>
+            </div>
+        </form>
+    </div>
+</div>
+
+
+
+ @{ if (TempData["alertMessage"] != null) {
+
+    <script type="text/javascript">
+        alert("@TempData["alertMessage"]");
+    </script>}}

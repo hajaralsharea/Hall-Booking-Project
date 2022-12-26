@@ -1,0 +1,49 @@
+﻿@model Hall_Booking.Models.ContactU
+
+@{
+    ViewData["Title"] = "Details";
+    Layout ="~/Views/Shared/AdminLayout.cshtml";
+}
+<head>
+    <style>
+        .paddingvalue{
+            padding: 10px;
+        }
+    </style>
+</head>
+<h1><i class="mdi mdi-message-alert menu-icon"></i> Message Details</h1>
+
+<div>
+    
+    <hr />
+    <dl class="row">
+        <dt class = "col-sm-2 paddingvalue">
+            @Html.DisplayNameFor(model => model.FullName)
+        </dt>
+        <dd class = "col-sm-10 paddingvalue">
+            @Html.DisplayFor(model => model.FullName)
+        </dd>
+        <dt class = "col-sm-2 paddingvalue">
+            @Html.DisplayNameFor(model => model.Email)
+        </dt>
+        <dd class = "col-sm-10 paddingvalue">
+            @Html.DisplayFor(model => model.Email)
+        </dd>
+        <dt class = "col-sm-2 paddingvalue">
+            @Html.DisplayNameFor(model => model.Message)
+        </dt>
+        <dd class = "col-sm-10 paddingvalue">
+            @Html.DisplayFor(model => model.Message)
+        </dd>
+        <dt class = "col-sm-2 paddingvalue">
+            @Html.DisplayNameFor(model => model.User)
+        </dt>
+        <dd class = "col-sm-10 paddingvalue">
+            @Html.DisplayFor(model => model.User.Id)
+        </dd>
+    </dl>
+</div>
+<div>
+    @*<a asp-action="Edit" asp-route-id="@Model.Id">Edit</a> |*@
+    <a asp-action="AdminMessages"style="color: black;background-color: antiquewhite;text-decoration: none;padding: 13px;border-radius: 18px;">Back to List</a>
+</div>

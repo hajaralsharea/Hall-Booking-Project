@@ -1,0 +1,73 @@
+﻿@model Hall_Booking.Models.Booking
+
+@{
+    ViewData["Title"] = "Create";
+    Layout ="~/Views/Shared/UserLayout.cshtml";
+}
+<head>
+      <style>
+            .linkh2 a:hover{
+            font-weight:bold !important;
+     
+        }
+      </style>
+</head>
+<body>
+
+</body>
+
+<h1 style=" font-family: -webkit-body; font-weight: bold;  font-size: 23px;"> <i class="mdi mdi-checkbox-multiple-marked-outline"></i> Lets Book</h1>
+
+<hr />
+<div class="row">
+    <div class="col-md-4">
+        <form asp-action="Create">
+            <div asp-validation-summary="ModelOnly" class="text-danger"></div>
+            <div class="form-group">
+                <label asp-for="BookingNotes" class="control-label" style=" font-family: -webkit-body;  font-size: 20px;">Whats your needs?</label>
+                <input asp-for="BookingNotes" class="form-control" />
+                <span asp-validation-for="BookingNotes" class="text-danger"></span>
+            </div>
+            <div class="form-group" hidden>
+                <label asp-for="BookingDate" class="control-label"></label>
+                <input asp-for="BookingDate" class="form-control" />
+                <span asp-validation-for="BookingDate" class="text-danger"></span>
+            </div>
+          
+            <div class="form-group">
+                <label asp-for="StartDate" class="control-label"  style=" font-family: -webkit-body;  font-size: 20px;"> Check In</label>
+                <input asp-for="StartDate" class="form-control" />
+                <span asp-validation-for="StartDate" class="text-danger"></span>
+            </div>
+            <div class="form-group">
+                <label asp-for="EndDate" class="control-label"  style=" font-family: -webkit-body;  font-size: 20px;"> Check Out</label>
+                <input asp-for="EndDate" class="form-control" />
+                <span asp-validation-for="EndDate" class="text-danger"></span>
+            </div>
+            <div class="form-group">
+                <label asp-for="HallId" class="control-label"   style=" font-family: -webkit-body;  font-size: 20px;"> Hall Number</label>
+                <select asp-for="HallId" class ="form-control" asp-items="ViewBag.HallId"></select>
+            </div>
+            <div class="form-group" hidden>
+                <label asp-for="UserId" class="control-label"></label>
+                <select asp-for="UserId" class ="form-control" asp-items="ViewBag.UserId"></select>
+            </div>
+            <div class="form-group" hidden>
+                <label asp-for="StatusId" class="control-label"></label>
+                <select asp-for="StatusId" class ="form-control" asp-items="ViewBag.StatusId"></select>
+            </div>
+            <div class="form-group linkh2">
+              <input type="submit" value="Create" class="btn btn-primary" style="color: black;background-color: antiquewhite;text-decoration: none;padding: 13px;border-radius: 18px;border-color:antiquewhite"/>
+            </div>
+        </form>
+    </div>
+</div>
+
+
+
+	@if(TempData["alertMessage"]!=null)
+   {
+      <script type="text/javascript">
+       alert("@TempData["alertMessage"]");
+      </script>
+   }

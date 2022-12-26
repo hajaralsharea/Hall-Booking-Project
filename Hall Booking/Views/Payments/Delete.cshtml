@@ -1,0 +1,52 @@
+﻿@model Hall_Booking.Models.Payment
+
+@{
+    ViewData["Title"] = "Delete";
+    Layout ="~/Views/Shared/UserLayout.cshtml";
+}
+
+<h1 style=" font-family: -webkit-body; font-weight: bold;  font-size: 23px;"> <i class="mdi mdi-delete-circle" style="font-size: 26px;"></i>  Delete Your Visa Card</h1>
+
+<h3  style=" font-family: -webkit-body;  font-size: 20px;">Are you sure you want to delete your Visa Card?</h3>
+<div>
+  
+    <hr />
+    <dl class="row">
+        <dt class = "col-sm-2" style=" font-family: -webkit-body;  font-size: 17px;">
+            @Html.DisplayNameFor(model => model.PaymentDate)
+        </dt>
+        <dd class = "col-sm-10" style=" font-family: -webkit-body;  font-size: 17px;">
+            @Html.DisplayFor(model => model.PaymentDate)
+        </dd>
+        <dt class = "col-sm-2" style=" font-family: -webkit-body;  font-size: 17px;">
+            @Html.DisplayNameFor(model => model.CardName)
+        </dt>
+        <dd class = "col-sm-10" style=" font-family: -webkit-body;  font-size: 17px;">
+            @Html.DisplayFor(model => model.CardName)
+        </dd>
+        <dt class = "col-sm-2" style=" font-family: -webkit-body;  font-size: 17px;">
+            @Html.DisplayNameFor(model => model.CardSequanceNumber)
+        </dt>
+        <dd class = "col-sm-10" style=" font-family: -webkit-body;  font-size: 17px;">
+            @Html.DisplayFor(model => model.CardSequanceNumber)
+        </dd>
+        <dt class = "col-sm-2" style=" font-family: -webkit-body;  font-size: 17px;">
+            @Html.DisplayNameFor(model => model.CardBalance)
+        </dt>
+        <dd class = "col-sm-10" style=" font-family: -webkit-body;  font-size: 17px;">
+            @Html.DisplayFor(model => model.CardBalance)
+        </dd>
+        <dt class = "col-sm-2" style=" font-family: -webkit-body;  font-size: 17px;">
+            @Html.DisplayNameFor(model => model.User)
+        </dt>
+        <dd class = "col-sm-10" style=" font-family: -webkit-body;  font-size: 17px;">
+            @Html.DisplayFor(model => model.User.Id)
+        </dd class>
+    </dl>
+    
+    <form asp-action="Delete">
+        <input type="hidden" asp-for="Id" />
+        <input type="submit" value="Delete" class="btn btn-danger" style="color: black;background-color: red;text-decoration: none;padding: 13px;border-radius: 18px; width: 94px; height: 43px;" /> |
+        <a asp-action="UserVisa" style="color: black;background-color: antiquewhite;text-decoration: none;padding: 13px;border-radius: 18px;border-color:antiquewhite">Back</a>
+    </form>
+</div>

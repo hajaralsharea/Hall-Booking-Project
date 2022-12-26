@@ -1,0 +1,66 @@
+﻿@model Hall_Booking.Models.Hall
+@{ Layout ="~/Views/Shared/AdminLayout.cshtml";}
+@{
+    ViewData["Title"] = "Create";
+}
+<!DOCTYPE html>
+
+<html>
+<head>
+    <meta name="viewport" content="width=device-width" />
+    <title>Create Hall</title>
+</head>
+<body>
+
+<h1 style=" font-family: -webkit-body; font-weight: bold;  font-size: 23px;">  <i class="mdi mdi-library-plus"></i>  Add Hall</h1>
+
+
+<hr />
+<div class="row">
+    <div class="col-md-4">
+        <form asp-action="Create" enctype="multipart/form-data">
+            <div asp-validation-summary="ModelOnly" class="text-danger"></div>
+            <div class="form-group">
+                <label asp-for="HallName" class="control-label" style=" font-family: -webkit-body;  font-size: 20px;"> Hall Name</label>
+                <input asp-for="HallName" class="form-control" />
+                <span asp-validation-for="HallName" class="text-danger"></span>
+            </div>
+            <div class="form-group">
+                <label asp-for="HallAddress" class="control-label" style=" font-family: -webkit-body;  font-size: 20px;"> Hall Address</label>
+                <input asp-for="HallAddress" class="form-control" />
+                <span asp-validation-for="HallAddress" class="text-danger"></span>
+            </div>
+            <div class="form-group">
+                <label asp-for="Capacity" class="control-label" style=" font-family: -webkit-body;  font-size: 20px;"></label>
+                <input asp-for="Capacity" class="form-control" />
+                <span asp-validation-for="Capacity" class="text-danger"></span>
+            </div>
+            <div class="form-group">
+                <label asp-for="Price" class="control-label" style=" font-family: -webkit-body;  font-size: 20px;"></label>
+                <input asp-for="Price" class="form-control" />
+                <span asp-validation-for="Price" class="text-danger"></span>
+            </div>
+            <div class="form-group">
+                <label asp-for="HallArea" class="control-label" style=" font-family: -webkit-body;  font-size: 20px;"> Hall Area</label>
+                <input asp-for="HallArea" class="form-control" />
+                <span asp-validation-for="HallArea" class="text-danger"></span>
+            </div>
+             <div class="form-group">
+                <label asp-for="CategoryId" class="control-label" style=" font-family: -webkit-body;  font-size: 20px;"> Category Number</label>
+                <select asp-for="CategoryId" class ="form-control" asp-items="ViewBag.CategoryId"></select>
+            </div>
+            <div class="form-group">
+                <label asp-for="ImageFile" class="control-label" style=" font-family: -webkit-body;  font-size: 20px;">Hall Image</label>
+                <input asp-for="ImageFile" class="form-control" />
+                <span asp-validation-for="ImageFile" class="text-danger"></span>
+            </div>
+            <div class="form-group">
+                <input type="submit" value="Create" class="btn btn-primary" style="color: black;background-color: antiquewhite;text-decoration: none;padding: 13px;border-radius: 18px; border-color:antiquewhite;  width: 102px;height: 43px;"  />
+            </div>
+        </form>
+    </div>
+</div>
+
+
+</body>
+</html>

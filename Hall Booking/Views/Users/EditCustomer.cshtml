@@ -1,0 +1,56 @@
+﻿
+@model Hall_Booking.Models.User
+@{ Layout ="~/Views/Shared/UserLayout.cshtml";}
+
+@{
+ 
+    ViewData["Title"] = "Edit";
+}
+
+<h1 style=" font-family: -webkit-body; font-weight: bold;  font-size: 23px;"><i class="mdi mdi-account menu-icon"></i> Update Your Profile</h1>
+
+
+<hr />
+<div class="row">
+    <div class="col-md-4">
+        <form asp-action="EditCustomer" enctype = "multipart/form-data">
+            <div asp-validation-summary="ModelOnly" class="text-danger"></div>
+            <input type="hidden" asp-for="Id" />
+            <div class="form-group">
+                <label asp-for="Fname" class="control-label" style=" font-family: -webkit-body;  font-size: 20px;"> First Name</label>
+                <input asp-for="Fname" class="form-control" />
+                <span asp-validation-for="Fname" class="text-danger"></span>
+            </div>
+            <div class="form-group">
+                <label asp-for="Lname" class="control-label" style=" font-family: -webkit-body;  font-size: 20px;"> Last Name</label>
+                <input asp-for="Lname" class="form-control" />
+                <span asp-validation-for="Lname" class="text-danger"></span>
+            </div>
+            <div class="form-group">
+                <label asp-for="UserName" class="control-label" style=" font-family: -webkit-body;  font-size: 20px;"> User Name</label>
+                <input asp-for="UserName" class="form-control" />
+                <span asp-validation-for="UserName" class="text-danger"></span>
+            </div>
+            <div class="form-group">
+                <label asp-for="Email" class="control-label" style=" font-family: -webkit-body;  font-size: 20px;">Email</label>
+                <input asp-for="Email" class="form-control" />
+                <span asp-validation-for="Email" class="text-danger"></span>
+            </div>
+            <div class="form-group">
+                <label asp-for="Phonenumber" class="control-label" style=" font-family: -webkit-body;  font-size: 20px;"> Phone Number</label>
+                <input asp-for="Phonenumber" class="form-control" />
+                <span asp-validation-for="Phonenumber" class="text-danger"></span>
+            </div>
+            <div class="form-group">
+                <label asp-for="ImageFile" class="control-label" style=" font-family: -webkit-body;  font-size: 20px;"> Profile Image</label>
+                <input asp-for="ImageFile" class="form-control" />
+                <span asp-validation-for="ImageFile" class="text-danger"></span>
+            </div>
+            <div class="form-group">
+               <input type="submit" value="Save" class="btn btn-primary"  style="color: black;background-color: antiquewhite;text-decoration: none;padding: 13px;border-radius: 18px;border-color:antiquewhite"/>
+            </div>
+        </form>
+    </div>
+</div>
+
+

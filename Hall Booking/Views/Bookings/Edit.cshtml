@@ -1,0 +1,60 @@
+﻿@model Hall_Booking.Models.Booking
+
+@{
+    ViewData["Title"] = "Edit";
+     Layout ="~/Views/Shared/AdminLayout.cshtml";
+}
+
+<h1 style=" font-family: -webkit-body; font-weight: bold;  font-size: 23px;"> <i class="mdi mdi-border-color menu-icon"></i> Edit Booking</h1>
+
+
+<hr />
+<div class="row">
+    <div class="col-md-4">
+        <form asp-action="Edit">
+            <div asp-validation-summary="ModelOnly" class="text-danger"></div>
+            <input type="hidden" asp-for="Id" />
+            <div class="form-group" >
+                <label asp-for="BookingNotes" class="control-label"  style=" font-family: -webkit-body;  font-size: 20px;"> Notes</label>
+                <input asp-for="BookingNotes" class="form-control" readonly />
+                <span asp-validation-for="BookingNotes" class="text-danger"></span>
+            </div>
+            <div class="form-group" hidden>
+                <label asp-for="BookingDate" class="control-label"  style=" font-family: -webkit-body;  font-size: 20px;"></label>
+                <input asp-for="BookingDate" class="form-control" />
+                <span asp-validation-for="BookingDate" class="text-danger"></span>
+            </div>
+            
+            <div class="form-group">
+                <label asp-for="StartDate" class="control-label"  style=" font-family: -webkit-body;  font-size: 20px;"> Check In</label>
+                <input asp-for="StartDate" class="form-control" readonly/>
+                <span asp-validation-for="StartDate" class="text-danger"></span>
+            </div>
+            <div class="form-group">
+                <label asp-for="EndDate" class="control-label"  style=" font-family: -webkit-body;  font-size: 20px;"> Check Out</label>
+                <input asp-for="EndDate" class="form-control"  readonly/>
+                <span asp-validation-for="EndDate" class="text-danger"></span>
+            </div>
+            <div class="form-group">
+                <label asp-for="HallId" class="control-label"  style=" font-family: -webkit-body;  font-size: 20px;"> Hall Number</label>
+                <select asp-for="HallId" class="form-control" asp-items="ViewBag.HallId" readonly></select>
+                <span asp-validation-for="HallId" class="text-danger"></span>
+            </div>
+            <div class="form-group">
+                <label asp-for="UserId" class="control-label"  style=" font-family: -webkit-body;  font-size: 20px;">User Number</label>
+                <select asp-for="UserId" class="form-control" asp-items="ViewBag.UserId" readonly ></select>
+                <span asp-validation-for="UserId" class="text-danger"></span>
+            </div>
+             <div class="form-group">
+                <label asp-for="StatusId" class="control-label"  style=" font-family: -webkit-body;  font-size: 20px;"> Status</label>
+                <select asp-for="StatusId" class="form-control" asp-items="ViewBag.StatusId"></select>
+                <span asp-validation-for="StatusId" class="text-danger"></span>
+            </div>
+            <div class="form-group">
+                <input type="submit" value="Save" class="btn btn-primary"  style="color: black;background-color: antiquewhite;text-decoration: none;padding: 13px;border-radius: 18px;  border-color: antiquewhite;width: 100px;"/>
+            </div>
+        </form>
+    </div>
+</div>
+
+

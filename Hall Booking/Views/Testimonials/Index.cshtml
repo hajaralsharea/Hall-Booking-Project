@@ -1,0 +1,81 @@
+﻿@model IEnumerable<Hall_Booking.Models.Testimonial>
+@{ Layout ="~/Views/Shared/AdminLayout.cshtml";}
+@{
+    
+    ViewData["Title"] = "Index";
+}
+
+<head>
+    <title>User Testimonial</title>
+    <style>
+       
+          .linkh2 a:hover{
+            font-weight:bold;
+        }
+
+            table thead tr th{
+            font-weight:bold !important;
+        }
+         .table th img, .table td img {
+            width: 63px;
+            height: 63px;
+   
+        }
+        
+        .table thead th {
+            border-top: 0;
+            border-bottom-width: 1px;
+            font-family: -webkit-body !important;
+            font-weight: initial;
+            font-size: 17px;
+        }
+         .table tbody td {
+            border-top: 0;
+            border-bottom-width: 1px;
+            font-family: -webkit-body !important;
+            font-weight: initial;
+            font-size: 17px;
+        }
+    </style>
+</head>
+
+<h1 style="padding: 18px 3px; font-family: -webkit-body;"> <i class="mdi mdi-email menu-icon"></i>  Testimonials</h1>
+
+<div class="table-responsive">
+<table class="table">
+    <thead>
+        <tr class="thstyle">
+            <th>
+               User Comment
+            </th>
+            <th>
+                User Number
+            </th>
+            <th>
+                @Html.DisplayNameFor(model => model.Status)
+            </th>
+            <th></th>
+        </tr>
+    </thead>
+    <tbody>
+@foreach (var item in Model) {
+            
+            <tr class="tdstyle">
+            <td>
+                @Html.DisplayFor(modelItem => item.Commint)
+            </td>
+            <td>
+                @Html.DisplayFor(modelItem => item.User.Id)
+            </td>
+              <td>
+                @Html.DisplayFor(modelItem => item.Status.StatusName)
+            </td>
+            <td class="linkh2">
+                <a asp-action="Edit" asp-route-id="@item.Id" style="color: black;background-color: antiquewhite;text-decoration: none;padding: 13px;border-radius: 18px;">Edit</a> |
+                <a asp-action="Delete" asp-route-id="@item.Id" style="color: black;background-color: antiquewhite;text-decoration: none;padding: 13px;border-radius: 18px;">Delete</a>
+            </td>
+        </tr>
+}
+    </tbody>
+</table>
+</div>

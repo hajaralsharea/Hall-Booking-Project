@@ -1,0 +1,126 @@
+﻿@model IEnumerable<Hall_Booking.Models.Hall>
+
+@{ Layout ="~/Views/Shared/AdminLayout.cshtml";}
+@{
+    ViewData["Title"] = "Index";
+    //Layout = null;
+
+}
+<head>
+    <style>
+      .linkho a:hover{
+          font-weight:bold;
+      }
+             th,td{
+             padding: 24px;
+         }
+         .table th img, .table td img {
+            width: 63px;
+            height: 63px;
+   
+        }
+         table thead tr th{
+            font-weight:bold !important;
+        }
+        .table thead th {
+            border-top: 0;
+            border-bottom-width: 1px;
+            font-family: -webkit-body !important;
+            font-weight: initial;
+            font-size: 17px;
+        }
+         .table tbody td {
+            border-top: 0;
+            border-bottom-width: 1px;
+            font-family: -webkit-body !important;
+            font-weight: initial;
+            font-size: 17px;
+        }
+      
+    </style>
+
+
+</head>
+<h1 style="padding: 18px 3px; font-family: -webkit-body;"> <i class="mdi mdi-home-outline menu-icon"></i>  Our Halls</h1>
+<div style="padding-top: 17px;">
+<p style="text-decoration: none;
+    color: black;
+    background: antiquewhite;
+    width: 118px;
+    height: 45px;
+    display: flex;
+    justify-content: center;
+    border-radius: 50px;" class="linkho">
+    <a asp-action="Create"  style="text-decoration: none;color: black;padding-top: 11px; ">Add Hall </a>
+    <i class="mdi mdi-library-plus"style="padding-top: 10px; padding-left: 4px;"></i>
+</p>
+</div>
+
+            
+<div class="table-responsive" >
+<table class="table">
+    <thead>
+        <tr class="thstyle">
+            <th>
+               Hall Name
+            </th>
+            <th>
+               Hall Address
+            </th>
+            <th>
+                @Html.DisplayNameFor(model => model.Capacity)
+            </th>
+            <th>
+                @Html.DisplayNameFor(model => model.Price)
+            </th>
+            <th>
+               Hall Area
+            </th>
+             <th>
+               
+                Hall Category
+            
+            </th>
+            <th>
+              Hall Image
+            </th>
+            <th></th>
+        </tr>
+    </thead>
+    <tbody>
+@foreach (var item in Model) {
+        <tr class="tdstyle">
+            <td>
+                @Html.DisplayFor(modelItem => item.HallName)
+            </td>
+            <td>
+                @Html.DisplayFor(modelItem => item.HallAddress)
+            </td>
+            <td>
+                @Html.DisplayFor(modelItem => item.Capacity)
+            </td>
+            <td>
+                @Html.DisplayFor(modelItem => item.Price)
+            </td>
+            <td>
+                @Html.DisplayFor(modelItem => item.HallArea)
+            </td>
+            <td>
+                @Html.DisplayFor(modelItem => item.HallCategory.CategoryName)
+            </td>
+            <td>
+                <img src=@Url.Content("~/Images/" + item.ImagePath) style="border-radius:20%;" width="100" height="100" />
+            </td>
+            <td class="linkho">
+         
+                <a asp-action="Edit" asp-route-id="@item.Id" style="color: black;background-color: antiquewhite;text-decoration: none;padding: 13px;border-radius: 18px;">Edit</a> |
+
+          
+               <a asp-action="Delete" asp-route-id="@item.Id" style="color: black;background-color: antiquewhite;text-decoration: none;padding: 13px;border-radius: 18px;">Delete</a>
+            </td>
+        </tr>
+}
+    </tbody>
+   
+</table>
+</div>

@@ -1,0 +1,244 @@
+﻿@model Tuple<IEnumerable<Hall_Booking.Models.HallCategory>,IEnumerable<Hall_Booking.Models.Testimonial>,IEnumerable<Hall_Booking.Models.User>>
+@{
+    ViewData["Title"] = "Home Page";
+    Layout="~/Views/Shared/HomeLayout.cshtml";
+    //var name = ViewBag.EmployeeName;
+    var name = ViewBag.EmployeeName;
+}
+
+<!DOCTYPE html>
+<html>
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="description" content="Sona Template">
+    <meta name="keywords" content="Sona, unica, creative, html">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta http-equiv="X-UA-Compatible" content="ie=edge">
+    <title>Hall Booking</title>
+
+    <!-- Google Font -->
+    <link href="https://fonts.googleapis.com/css?family=Lora:400,700&display=swap" rel="stylesheet">
+    <link href="https://fonts.googleapis.com/css?family=Cabin:400,500,600,700&display=swap" rel="stylesheet">
+
+    <!-- Css Styles -->
+    <link rel="stylesheet" href="~/AssestsTamplate/css/bootstrap.min.css" type="text/css">
+    <link rel="stylesheet" href="~/AssestsTamplate/css/font-awesome.min.css" type="text/css">
+    <link rel="stylesheet" href="~/AssestsTamplate/css/elegant-icons.css" type="text/css">
+    <link rel="stylesheet" href="~/AssestsTamplate/css/flaticon.css" type="text/css">
+    <link rel="stylesheet" href="~/AssestsTamplate/css/owl.carousel.min.css" type="text/css">
+    <link rel="stylesheet" href="~/AssestsTamplate/css/nice-select.css" type="text/css">
+    <link rel="stylesheet" href="~/AssestsTamplate/css/jquery-ui.min.css" type="text/css">
+    <link rel="stylesheet" href="~/AssestsTamplate/css/magnific-popup.css" type="text/css">
+    <link rel="stylesheet" href="~/AssestsTamplate/css/slicknav.min.css" type="text/css">
+    <link rel="stylesheet" href="~/AssestsTamplate/css/style.css" type="text/css">
+
+
+    <link rel = "stylesheet" href = "https://www.w3schools.com/lib/w3.css">
+      <link rel = "stylesheet" href = "css/w3-theme-red.css">
+    
+    <style>
+        .hero-slider.owl-carousel .owl-dots button{
+                background: rgb(0 0 0 / 0%);
+        }
+        .hovera a:hover{
+            color:black !important;
+            font-weight:bold !important;
+        }
+        .zoom{
+            padding-top: 20px !important;
+        }
+        .zoom:hover {
+          transform: scale(1.05); /* (150% zoom - Note: if the zoom is too large, it will go outside of the viewport) */
+        }
+        .hero-text h1 {
+            font-size: 80px;
+            line-height: 90px;
+            color: #ffffff;
+            margin-bottom: 16px;
+            font-family: -webkit-body !important;
+        }
+        .upper{
+            text-transform:uppercase;
+        }
+
+
+    </style>
+</head>
+
+<body>
+
+
+    <!-- Hero Section Begin -->
+    <section class="hero-section">
+        <div class="container">
+            <div class="row">
+                <div class="col-lg-6">
+                    <div class="hero-text">
+                        <h1>The Luxury Halls</h1>
+                        <p>Here are the best hall booking site, including a greate halls for any event with low-cost.</p>
+                        <a href="#catsection" class="primary-btn">Discover Now</a>
+                    </div>
+                </div>
+       
+            </div>
+        </div>
+        <div class="hero-slider owl-carousel">
+            <div class="hs-item set-bg" ><img src="~/AssestsTamplate/img/hero/hellologin.jpeg" class="hs-item set-bg" alt="slider"/></div>
+@*            <div class="hs-item set-bg" ><img src="~/AssestsTamplate/img/hero/headerhall1.jpg" class="hs-item set-bg" alt="slider"/></div>
+*@            <div class="hs-item set-bg"><img src="~/AssestsTamplate/img/hero/mhall12.jpg" class="hs-item set-bg" alt="slider"/></div>
+            <div class="hs-item set-bg"><img src="~/AssestsTamplate/img/hero/whall92.jpg" class="hs-item set-bg" alt="slider"/></div>
+        </div>
+        
+    </section>
+    <!-- Hero Section End -->
+     
+    <!-- About Us Section Begin -->
+    <section class="aboutus-section spad">
+        <div class="container">
+            <div class="row">
+                <div class="col-lg-6">
+                    <div class="about-text">
+                        <div class="section-title">
+                            <span>About Us</span>
+                            <h2 style="font-family: -webkit-body;">Halls booking<br />Website</h2>
+                        </div>
+                        <p class="s-para">The halls leading online reservation system for wedding halls, meeting halls, community centres and all other bookable function rooms.</p>
+                       @* <p class="f-para">The hall.com is an online site for halls booking . We’re passionate about
+                            travel. Every day, we inspire and reach millions of travelers across 90 local websites in 41
+                            languages.</p>*@
+                        
+                        <a asp-controller="AboutUs" asp-action="AboutUsHome" class="primary-btn about-btn">Read More</a>
+                    </div>
+                </div>
+                <div class="col-lg-6">
+                    <div class="about-pic">
+                        <div class="row">
+                            <div class="col-sm-6">
+                                <img src="~/AssestsTamplate/img/about/muhall1.jpg" alt="hall photo" style="height: 372px;">
+                            </div>
+                            <div class="col-sm-6">
+                                <img src="~/AssestsTamplate/img/about/hall15.jpg" alt="hall photo" style="height: 372px;">
+                            </div>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </section>
+   
+
+
+    <!-- About Us Section End -->
+
+    <!-- Home Room Section Begin -->
+     <div class="section-title" id="catsection">
+        <span>Hall Categories</span>
+       
+    </div>
+    <section class="hp-room-section" style="padding: 0px 50px">
+        <div class="container-fluid">
+            <div class="hp-room-items">
+                <div class="row">
+                    @foreach(var item in Model.Item1)
+    
+                    {
+                    <div class="col-lg-3 col-md-6 padding-top: 20px;">
+                       <div class="w3-card-4 zoom"><a href="/Halls/HallsCard/@item.Id"> <img src=@Url.Content("~/Images/" + @item.ImagePath)  class="hp-room-item set-bg"alt="@item.CategoryName" style="height: 450px;" /></a>
+
+                            <div>
+                                <div class="w3-center hovera" style="padding: 21px 0px;">
+                                <a href="/Halls/HallsCard/@item.Id" style="font-family: -webkit-body;font-size: 20px;">@item.CategoryName</a>
+                                </div>
+        
+                            </div>
+                        </div>
+                    </div>
+                   }
+                    </div>
+                    </div>
+                    </div>
+                    </section>
+                 
+    <!-- Home Room Section End -->
+
+    <!-- Testimonial Section Begin -->
+    <section class="testimonial-section spad">
+        <div class="container">
+            <div class="row">
+                <div class="col-lg-12">
+                    <div class="section-title">
+                        <span>Testimonials</span>
+                        <h2>What Customers Say?</h2>
+                    </div>
+                </div>
+            </div>
+            <div class="row">
+               
+                <div class="col-lg-8 offset-lg-2">
+                    <div class="testimonial-slider owl-carousel">
+                    @foreach(var item in Model.Item2)
+                    {
+                        if(item.StatusId==1){
+                        <div class="ts-item">
+                            <div class="ti-author">
+                           
+                                        @foreach(var item1 in Model.Item3)
+                                        {
+                                            if (item.UserId == item1.Id)
+                                            {
+                                                <img src=@Url.Content("~/Images/" + item1.ImagePath) alt="" style="border-radius:20%;" width="100" height="100">
+                                                break;
+                                            }
+                                        }
+                                    </div>
+                            <p>@item.Commint</p>
+                            <div class="ti-author">
+                                @foreach(var itemu in Model.Item3)
+                                {
+                                    if (itemu.Id == item.UserId)
+                                    {
+                                        <span style="font-family:-webkit-body;font-weight:bold;font-size:15px; color:#706060; "class="upper">@itemu.Fname</span>
+                                        <span style="font-family:-webkit-body;font-weight:bold;font-size:15px; color:#706060;" class="upper">@itemu.Lname</span>
+                                        break;
+                                    }
+                                }
+                                        
+                            </div>
+                            
+                        </div>
+                        }}</div>
+                        </div>
+                        </div>
+                        </div>
+                    </section>
+
+    <!-- Testimonial Section End -->
+
+   
+
+    <!-- Search model Begin -->
+    <div class="search-model">
+        <div class="h-100 d-flex align-items-center justify-content-center">
+            <div class="search-close-switch"><i class="icon_close"></i></div>
+            <form class="search-model-form">
+                <input type="text" id="search-input" placeholder="Search here.....">
+            </form>
+        </div>
+    </div>
+    <!-- Search model end -->
+
+    <!-- Js Plugins -->
+    <script src="~/AssestsTamplate/js/jquery-3.3.1.min.js"></script>
+    <script src="~/AssestsTamplate/js/bootstrap.min.js"></script>
+    <script src="~/AssestsTamplate/js/jquery.magnific-popup.min.js"></script>
+    <script src="~/AssestsTamplate/js/jquery.nice-select.min.js"></script>
+    <script src="~/AssestsTamplate/js/jquery-ui.min.js"></script>
+    <script src="~/AssestsTamplate/js/jquery.slicknav.js"></script>
+    <script src="~/AssestsTamplate/js/owl.carousel.min.js"></script>
+    <script src="~/AssestsTamplate/js/main.js"></script>
+
+
+</body>
+
+</html>

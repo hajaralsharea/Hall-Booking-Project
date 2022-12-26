@@ -1,0 +1,47 @@
+﻿@model Hall_Booking.Models.Testimonial
+@{ Layout ="~/Views/Shared/AdminLayout.cshtml";}
+@{
+    ViewData["Title"] = "Edit";
+}
+<head>
+    <style>
+            .linkh2 a:hover{
+            font-weight:bold;
+        }
+    </style>
+</head>
+
+<h1 style=" font-family: -webkit-body; font-weight: bold;  font-size: 23px;"> <i class="mdi mdi-border-color menu-icon"></i> Edit Testimonials</h1>
+
+
+<hr />
+<div class="row">
+    <div class="col-md-4">
+        <form asp-action="Edit">
+            <div asp-validation-summary="ModelOnly" class="text-danger"></div>
+            <input type="hidden" asp-for="Id" />
+            <div class="form-group" >
+                <label asp-for="Commint" class="control-label"  style=" font-family: -webkit-body;  font-size: 20px;"> User FeedBack</label>
+                <input asp-for="Commint" class="form-control" readonly/>
+                <span asp-validation-for="Commint" class="text-danger"></span>
+            </div>
+            <div class="form-group" hidden>
+                <label asp-for="UserId" class="control-label"  style=" font-family: -webkit-body;  font-size: 20px;"></label>
+                <select asp-for="UserId" class="form-control" asp-items="ViewBag.UserId"></select>
+                <span asp-validation-for="UserId" class="text-danger"></span>
+            </div>
+         <div class="form-group">
+                <label asp-for="StatusId" class="control-label"  style=" font-family: -webkit-body;  font-size: 20px;"> Status </label>
+                <select asp-for="StatusId" class="form-control" asp-items="ViewBag.StatusId"></select>
+                <span asp-validation-for="StatusId" class="text-danger"></span>
+            </div>
+            <div class="form-group linkh2">
+                <input type="submit" value="Save" class="btn btn-primary" style="color: black;background-color: antiquewhite;text-decoration: none;padding: 13px;border-radius: 18px; border-color:antiquewhite; width: 91px;" />
+            </div>
+        </form>
+    </div>
+</div>
+
+
+
+

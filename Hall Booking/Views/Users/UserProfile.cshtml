@@ -1,0 +1,108 @@
+﻿
+@*//Admin Profile Information*@
+
+@model IEnumerable<Hall_Booking.Models.User>
+@{ Layout ="~/Views/Shared/AdminLayout.cshtml";}
+
+@{
+    ViewData["Title"] = "UserProfile";
+    var UserId = ViewBag.UserId;
+}
+<head>
+    <title>Admin Profile</title>
+    <style>
+     
+            .table th img, .table td img {
+            width: 60px;
+            height: 60px;
+         }
+         th,td{
+             padding: 24px;
+         }
+          .linkh2 a:hover{
+            font-weight:bold;
+        }
+         table thead tr th{
+            font-weight:bold !important;
+        }
+
+             .linkh2 a:hover{
+            font-weight:bold;
+        }
+        .table thead th {
+            border-top: 0;
+            border-bottom-width: 1px;
+            font-family: -webkit-body !important;
+            font-weight: initial;
+            font-size: 17px;
+        }
+         .table tbody td {
+            border-top: 0;
+            border-bottom-width: 1px;
+            font-family: -webkit-body !important;
+            font-weight: initial;
+            font-size: 17px;
+        }
+    </style>
+</head>
+<h1 style="padding: 18px 3px; font-family: -webkit-body;" >
+   <i class="mdi mdi-account menu-icon"></i> My Profile</h1>
+<div class="table-responsive">
+<table class="table">
+    <thead>
+        <tr class="thstyle">
+            <th>
+                First Name
+            </th>
+            <th>
+                Last Name
+            </th>
+            <th>
+                @Html.DisplayNameFor(model => model.Email)
+            </th>
+            <th>
+               Phone Number
+            </th>
+            <th>
+               User Name
+            </th>
+            <th>
+                Profile Image
+            </th>
+            <th></th>
+        </tr>
+    </thead>
+    <tbody>
+@foreach (var item in Model) {
+    if(item.Id==UserId){
+        <tr class="tdstyle">
+            <td>
+                @Html.DisplayFor(modelItem => item.Fname)
+            </td>
+            <td>
+                @Html.DisplayFor(modelItem => item.Lname)
+            </td>
+            <td>
+                @Html.DisplayFor(modelItem => item.Email)
+            </td>
+            <td>
+                @Html.DisplayFor(modelItem => item.Phonenumber)
+            </td>
+            <td>
+                @Html.DisplayFor(modelItem => item.UserName)
+            </td>
+            <td>
+               <img src=@Url.Content("~/Images/" + item.ImagePath) style="border-radius:20%;" width="100" height="100" />
+
+            </td>
+            <td class="linkh2">
+                <a asp-action="Edit" asp-route-id="@item.Id" style="color: black;background-color: antiquewhite;text-decoration: none;padding: 13px;border-radius: 18px;">Update</a> | 
+                <a asp-action="Delete" asp-route-id="@item.Id" style="color: black;background-color: antiquewhite;text-decoration: none;padding: 13px;border-radius: 18px;">Remove Your Account</a>
+
+            </td>
+        </tr>
+}}
+    </tbody>
+</table>
+
+</div>
